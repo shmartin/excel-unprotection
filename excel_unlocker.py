@@ -31,10 +31,10 @@ class UI_Main:
 
     def unlocker(self):
         try:
-            self.wb = lw(fr'{path}')
+            self.wb = lw(fr'{self.file_dialog}')
             for s in self.wb.sheetnames:
                 self.wb[s].protection.sheet = False
-            self.wb.save(fr'{self.path}')
+            self.wb.save(fr'{self.file_dialog}')
             self.label_filedirectory.config(text = fr'{self.file_dialog}', fg = 'green')
         except:
             self.label_filedirectory.config(text = 'Invalid File Type. Excel files only', fg = 'red')
